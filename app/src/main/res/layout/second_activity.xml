@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp">
+
+    <EditText
+        android:id="@+id/etSecondNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese el nombre"
+        android:textSize="18sp"
+        android:inputType="textCapSentences"/>
+
+    <EditText
+        android:id="@+id/etSecondApellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese el apellido"
+        android:textSize="18sp"
+        android:inputType="textCapSentences"/>
+
+    <EditText
+        android:id="@+id/etSecondDocument"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese el DNI"
+        android:textSize="18sp"
+        android:inputType="number"
+        android:maxLength="8"/>
+
+    <EditText
+        android:id="@+id/etSecondEdad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese la edad"
+        android:textSize="18sp"
+        android:inputType="number"
+        android:maxLength="2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:paddingTop="8dp">
+
+        <Button
+            android:id="@+id/btSecondRegistrar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="registrar"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="#ffffff"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/btSecondActualizar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="actualizar"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="#ffffff"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/btSecondEliminar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="eliminar"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="#ffffff"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
