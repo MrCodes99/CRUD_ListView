@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
 
+
             startActivityForResult(intent, REQUEST_CODE);
 
         }
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             posi = position;
 
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-         //   intent.putExtra("codigo",persona.getId().toString());
+
             intent.putExtra("nombre", persona.getNombre().toString());
             intent.putExtra("apellido", persona.getApellido().toString());
             intent.putExtra("dni", persona.getDni().toString());
@@ -85,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
 
                 mLVMainAdapter.remove(persona);
 
-             //   persona.setId(data.getStringExtra("codigo"));
                 persona.setNombre(data.getStringExtra("nombre"));
                 persona.setApellido(data.getStringExtra("apellido"));
                 persona.setDni(data.getStringExtra("dni"));
@@ -102,46 +102,14 @@ public class MainActivity extends AppCompatActivity {
                 mLVMainAdapter.notifyDataSetChanged();
 
 
-            }
 
 
-        }
 
-       /* if(resultCode == RESULT_OK) {
-            if(requestCode == REQUEST_CODE) {
-
-                Persona persona = new Persona();
-                persona.setId(java.util.UUID.randomUUID().toString());
-                persona.setNombre(data.getStringExtra("nombre"));
-                persona.setApellido(data.getStringExtra("apellido"));
-                persona.setDni(data.getStringExtra("dni"));
-                persona.setEdad(Integer.valueOf(data.getStringExtra("edad")));
-
-                mLVMainAdapter.add(persona);
 
 
             }
+
         }
-        //UPDATE
-        else
-        if(requestCode == 99) {
-
-                Persona persona = mLVMainAdapter.getItem(posi);
-
-                //ELIMINAR EL REGISTRO
-                mLVMainAdapter.remove(persona);
-
-                //SETEAR EL NUEVO
-                persona.setId(data.getStringExtra("codigo"));
-                persona.setNombre(data.getStringExtra("nombre"));
-                persona.setApellido(data.getStringExtra("apellido"));
-                persona.setDni(data.getStringExtra("dni"));
-                persona.setEdad(Integer.valueOf(data.getStringExtra("edad")));
-
-                mLVMainAdapter.insert(persona, posi);
-                mLVMainAdapter.notifyDataSetChanged();
-            }*/
-
 
     }
 }

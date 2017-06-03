@@ -49,24 +49,15 @@
         android:paddingTop="8dp">
 
         <Button
-            android:id="@+id/btSecondRegistrar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="registrar"
-            android:backgroundTint="@color/colorPrimary"
-            android:textColor="#ffffff"
-            android:textSize="15sp"/>
-
-        <Button
             android:id="@+id/btSecondActualizar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="actualizar"
-            android:backgroundTint="@color/colorPrimary"
+            android:background="@color/colorPrimary"
             android:textColor="#ffffff"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:layout_marginRight="8dp"/>
 
         <Button
             android:id="@+id/btSecondEliminar"
@@ -74,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="eliminar"
-            android:backgroundTint="@color/colorPrimary"
+            android:background="@color/colorPrimary"
             android:textColor="#ffffff"
             android:textSize="15sp"/>
 
