@@ -1,13 +1,16 @@
 package com.michell.demo07_michell_2;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.StrictMode;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,13 +18,15 @@ public class MainActivity extends AppCompatActivity {
     private Button btMain;
     private LVMainAdapter mLVMainAdapter;
     private int REQUEST_CODE = 1;
+    private int UPDATE_CODE = 99;
+
     private int posi = -1;
 
     private final View.OnClickListener btMainOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
 
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
 
             startActivityForResult(intent, REQUEST_CODE);
 
@@ -43,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("dni", persona.getDni().toString());
             intent.putExtra("edad", String.valueOf(persona.getEdad()));
 
-            startActivityForResult(intent, 99);
+            startActivityForResult(intent, UPDATE_CODE);
         }
     };
 
@@ -80,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
                 mLVMainAdapter.add(persona);
 
-            }else if(requestCode==99){
+            }else if(requestCode==UPDATE_CODE){
 
                 Persona persona = mLVMainAdapter.getItem(posi);
 
@@ -94,20 +99,14 @@ public class MainActivity extends AppCompatActivity {
                 mLVMainAdapter.insert(persona,posi);
                 mLVMainAdapter.notifyDataSetChanged();
             }
-            else {
-                Persona persona = mLVMainAdapter.getItem(posi);
-
-                mLVMainAdapter.remove(persona);
-
-                mLVMainAdapter.notifyDataSetChanged();
 
 
+        }else if(resultCode == 10){
+            Persona persona = mLVMainAdapter.getItem(posi);
 
+            mLVMainAdapter.remove(persona);
 
-
-
-
-            }
+            mLVMainAdapter.notifyDataSetChanged();
 
         }
 
